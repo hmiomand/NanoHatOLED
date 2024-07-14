@@ -37,32 +37,10 @@ THE SOFTWARE.
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <stdio.h>
-#include <stdarg.h>
 #include <string.h>
 
 #include "daemonize.h"
-
-//extern void log2file(const char *fmt, ...);
-
-static void _log2file(const char* fmt, va_list vl) {
-    FILE* file_out;
-    file_out = fopen(LOG_FILE_NAME,"a+");
-    if (file_out == NULL) {
-        return;
-    }
-    vfprintf(file_out, fmt, vl);
-    fclose(file_out);
-}
-
-void log2file(const char *fmt, ...) {
-    if (DEBUG) {
-        va_list vl;
-        va_start(vl, fmt);
-        _log2file(fmt, vl);
-        va_end(vl);
-    }
-}
-
+extern void log2file(const char *fmt, ...);
 
 void daemonize(const char *cmd)
 {
@@ -155,7 +133,7 @@ void daemonize(const char *cmd)
 
 #define LOCKMODE (S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH)
 
-static int lockfile(int fd)
+int lockfile(int fd)
 {
     struct flock fl;
 

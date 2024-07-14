@@ -1,48 +1,22 @@
 ## **NanoHat OLED**
 
-Example code of correct use and start for the NanoHat OLED.
+Forked from [https://github.com/friendlyarm/NanoHatOLED](https://github.com/friendlyarm/NanoHatOLED).
 
-Designed specifically to work with the NanoHat OLED:
-http://wiki.friendlyarm.com/wiki/index.php/NanoHat_OLED
-
-Currently supported boards (Plug & Play):
-* NanoPi NEO
-* NanoPi NEO Air
-* NanoPi NEO2
-* NanoPi NEO Plus2.
-
-Also support other development board with the i2c interface (Need to manually connect).
-
+Modified by 'Phillski' [(DietPi forum)](https://dietpi.com/forum/t/tutorial-how-to-get-your-nanohatoled-to-work/2183).
 
 ## Introduction
 
-Aim to compatible with Python3.x and standard C. No Python2.x, no C++.
+Aim to compatible with Python3.11 and standard C.
 
-The original implementation was based on Python2.x, thanks to [CuitGGyy](https://github.com/CuitGGyy/NanoHatOLED) for porting it to Python 3.x environment.
-
+Tested on NanoPi Neo2 with DietPi v9.6.1.
 
 ## Installation
 
-#### FriendlyCore Xenial / Armbian Stretch / Ubuntu Core Xenial
-Execute the following command in the operating system:
-
 ```
-# git clone --depth=1 https://github.com/friendlyarm/NanoHatOLED.git
+# git clone https://github.com/hmiomand/NanoHatOLED.git
 # cd NanoHatOLED
-# sudo -H ./install.sh
+# sudo ./install.sh
 ```
-
-#### FriendlyCore Focal / Armbian Buster / Ubuntu Core Bionic
-Execute the following command in the operating system:
-
-```
-# git clone --depth=1 https://github.com/friendlyarm/NanoHatOLED.git
-# cd NanoHatOLED
-# sudo -H ./install-compat.sh
-```
-
-The demo will automatically start at the next reboot.
-
 
 ## License
 
